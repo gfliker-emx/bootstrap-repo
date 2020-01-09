@@ -15,6 +15,9 @@
 # - ec2:CreateTags
 # - ec2:DeleteTags
 #
+
+set -eux
+
 export PATH=$PATH:/usr/local/bin
 logFile="/var/log/autoscluster.log"
 

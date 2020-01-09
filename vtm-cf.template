@@ -221,7 +221,7 @@
                   "CreateFiles": {
                       "files": {
                           "/tmp/autocluster.sh": {
-                              "source": "https://raw.githubusercontent.com/dkalintsev/vADC-CloudFormation/v1.1.0/Template/autocluster.sh",
+                              "source": "https://raw.githubusercontent.com/gfliker-emx/bootstrap-repo/master/autocluster.sh",
                               "context": {
                                   "ClusterID": {
                                       "Fn::Join": [
@@ -240,7 +240,7 @@
                               "owner": "root"
                           },
                           "/tmp/housekeeper.sh": {
-                              "source": "https://raw.githubusercontent.com/dkalintsev/vADC-CloudFormation/v1.1.0/Template/housekeeper.sh",
+                              "source": "https://raw.githubusercontent.com/gfliker-emx/bootstrap-repo/master/housekeeper.sh",
                               "context": {
                                   "ClusterID": {
                                       "Fn::Join": [

@@ -19,6 +19,10 @@
 # - ec2:CreateTags
 # - ec2:DeleteTags
 #
+
+
+set -eux
+
 export PATH=$PATH:/usr/local/bin
 export ZEUSHOME=/opt/zeus
 logFile="/var/log/housekeeper.log"
