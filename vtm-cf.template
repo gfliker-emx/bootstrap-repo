@@ -183,7 +183,7 @@
                   "Ref": "DesiredCapacityASG"
               },
               "LaunchConfigurationName": {
-                  "Ref": "LaunchConfig"
+                  "Ref": "vADCLaunchConfig"
               },
               "MaxSize": {
                   "Ref": "MaxSizeASG"
@@ -196,7 +196,22 @@
                       "Key": "Name",
                       "Value": "vtm-gil Cfn ASG",
                       "PropagateAtLaunch": "true"
-                  }
+                  },
+                  {
+                    "Key": "ClusterID",
+                    "Value": {
+                        "Fn::Join": [
+                            "-",
+                            [
+                                {
+                                    "Ref": "AWS::StackName"
+                                },
+                                "vTM-Cluster"
+                            ]
+                        ]
+                    },
+                    "PropagateAtLaunch": "true"
+                }
               ],
               "VPCZoneIdentifier": {
                   "Ref": "VPCZoneIdentifier"
@@ -348,7 +363,7 @@
                                   "Ref": "AWS::StackName"
                               },
                               " cfn_resource=",
-                              "LaunchConfig",
+                              "vADCLaunchConfig",
                               " timezone=",
                               "UTC",
                               " cfn_region=",
