@@ -343,7 +343,7 @@ updateRemoteLicensingKeys () {
         echo '#!/bin/bash' > $waitForCmdF
         echo "curl -s -u admin:${adminPass} -X PUT -H \"Content-Type: application/json\" \
             -d '$requestJson' \
-            http://localhost:9070/api/tm/4.0/config/active/global_settings" >> $waitForCmdF
+            http://localhost:9070/api/tm/3.5/config/active/global_settings" >> $waitForCmdF
         waitFor "Update Global Settings"
     fi
 
@@ -353,7 +353,7 @@ updateRemoteLicensingKeys () {
 sefRegIfNecessary () {
     # Check if vTM is configured for Services Director self-registration
     regSrv=$(curl -s -u admin:${adminPass} \
-    http://localhost:9070/api/tm/4.0/config/active/global_settings \
+    http://localhost:9070/api/tm/3.5/config/active/global_settings \
         | jq -r '.properties.remote_licensing.registration_server')
 
     # The above would return an <address>:<port> of an SD, if configured
